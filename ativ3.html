@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Atividade 3 - DOM Javascript</title>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+		p, label, ul, input, button {
+			font-family: "Nunito", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 300;
+			font-size: 20px;
+			font-style: normal;
+		}
+		h1 {
+			font-family: "Josefin Sans", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 500;
+			font-style: normal;
+		}
+		.exemplos {
+			width: 90%;
+			height: 400px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 20px;
+		}
+		
+		</style>
+    </head>
+    <body>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+        <div class="exemplos">
+            <p>document.getElementById() - Retorna a referência do elemento através do seu ID.</p>
+            <p>Exemplo: </p>
+
+            <div class="exemplo1">
+                <h1 id="ExempleText">Algum texto de exemplo</h1>
+                <button onclick="mudarCor('blue');">Azul</button>
+                <button onclick="mudarCor('red');">Vermelho</button>
+            </div>
+
+        </div>
+        <br><br>
+		<div class="exemplos">
+            <p>document.getElementsByTagName() - O método de DocumentInterface retorna a HTMLCollection de elementos com o nome da tag dada.</p>
+            <p>Exemplo: </p>
+
+            <div class="exemplo2">
+                <label> Nome </label>
+                <input type="text" name="nome" id="nome" class="x" value="" onblur="Pega()">
+                <div>
+					<br>
+                    <input type="button" value="Enviar" onclick="Btclick()"> 
+                </div>
+                <P onclick="fcArrow()"></p> <!-- 4 -->
+                <P></p> <!-- 5 -->
+                <P></p> <!-- 6 -->
+            </div>
+
+		</div>
+        <br><br>
+        <div class="exemplos">
+            <p>getElementsByClassName() - O método retorna uma coleção de elementos com um(s) nome(s) de classe especificado(is).</p>
+            <p>Exemplo: </p>
+
+            <div class="exemplo3"> 
+                <p>Altera a cor de fundo do elemento com a classe "example" and "color":</p>
+                <div class="example">
+                    <p>This is a paragraph.</p>
+                </div>
+                <div class="example color">
+                    <p>This is a paragraph.</p>
+                </div>
+                <button onclick="BtnExemplo3();">Mudar fundo</button>
+                <br>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="exemplos">
+            <p>querySelector() - O método retorna o primeiro elemento que corresponde a um seletor CSS.</p>
+            <p>Exemplo: </p>
+
+            <div class="exemplo4"> 
+                <p>Adciona uma cor de fundo ao elemento com a classe "CorElement":</p>
+                <p class="CorElement">Exemplo querySelector.</p>
+                <p class="CorElement">Exemplo querySelector.</p> 
+                <button onclick="BtnExemplo4();">Mudar fundo</button>
+                <br>
+            </div>
+        </div>
+		<br><br><br>
+		<div class="exemplos">
+			<p>querySelectorAll() - O método retorna todos os elementos que correspondem a um(s) seletor(es) CSS(s).</p>
+            <p>Exemplo: </p>
+			
+			<div class="exemplo5"> 
+				<button class="btn">Generate Random Background Colors</button>
+				<ul class="sports-list">
+					<li>Football</li>
+					<li>Basketball</li>
+					<li>Tennis</li>
+					<li>Golf</li>
+					<li>Swimming</li>
+				</ul>
+                <br>
+            </div>
+		</div>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+		
+		<script>
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+			
+			//exemplo1
+			function mudarCor(novaCor) {
+				var elemento = document.getElementById("ExempleText");
+				elemento.style.color = novaCor;
+			}
+			
+			//exemplo2
+			let campoNome = document.getElementById("nome");
+			function Pega() {
+				let exibe = campoNome.value;
+				let p = document.getElementsByTagName("p"); 
+				p[4].innerHTML = exibe;
+			}
+			
+			function Btclick(){
+			
+				let exibe = campoNome.value;
+				let p = document.getElementsByTagName("p");
+				p[5].style.color = "#ff0000";
+				p[5].style.backgroundColor = "#836FFF";
+				p[5].innerHTML = exibe;
+				
+			}
+			
+			let fcArrow =()=>{
+				let exibe = campoNome.value;
+				let p = document.getElementsByTagName("p");
+				p[6].style.color = "#ADD8E6";
+				p[6].style.backgroundColor = "#000080";
+				p[6].innerHTML = exibe;
+			}
+
+			//exemplo3
+			function BtnExemplo3(){
+				const collection = document.getElementsByClassName("example color");
+				collection[0].style.backgroundColor = "red";
+			}
+
+			//exemplo4
+			function BtnExemplo4(){
+				document.querySelector(".CorElement").style.backgroundColor = "orange";
+			}
+			
+			//exemplo5
+			const sportsList = document.querySelectorAll(".sports-list li");
+			const randomColorBtn = document.querySelector(".btn");
+
+			console.log(sportsList);
+
+			const lightColorsArr = [
+			  "#FFDAB9",
+			  "#FFE4B5",
+			  "#FFFFE0",
+			  "#FAFAD2",
+			  "#F0FFF0",
+			  "#E0FFFF",
+			  "#AFEEEE",
+			  "#00CED1",
+			  "#00BFFF",
+			  "#1E90FF",
+			  "#ADD8E6",
+			  "#7FFFD4",
+			  "#7CFC00",
+			  "#7FFF00",
+			  "#32CD32",
+			  "#ADFF2F",
+			  "#FFFF00",
+			  "#FFD700",
+			  "#FFA500",
+			  "#FF6347",
+			];
+
+			function shuffleArray(arr) {
+			  let currentIndex = arr.length;
+			  let randomIndex;
+
+			  while (currentIndex !== 0) {
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex--;
+
+				[arr[currentIndex], arr[randomIndex]] = [
+				  arr[randomIndex],
+				  arr[currentIndex],
+				];
+			  }
+
+			  return arr;
+			}
+			randomColorBtn.addEventListener("click", () => {
+			  const shuffledColors = shuffleArray(lightColorsArr);
+
+			  sportsList.forEach((list, index) => {
+				list.style.backgroundColor = shuffledColors[index];
+			  });
+			});
+			
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+        </script>
+    </body>
+</html>

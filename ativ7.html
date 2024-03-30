@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aula PAM - Ativ7</title>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+		h2, label, input {
+			font-family: "Nunito", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 300;
+			font-size: 20px;
+			font-style: normal;
+		}
+		h1 {
+			font-family: "Josefin Sans", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 500;
+			font-style: normal;
+		}
+		div {
+			width: 90%;
+			height: 500px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 20px;
+			text-align: center;
+		}
+		#CampoCaixaAlta {
+			width: 60%;
+			height: 135px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 5px;
+			text-align: center;
+			background-color: #00000;
+		}
+		#conversor {
+			width: 300px;
+			height: 250px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 5px;
+			text-align: center;
+			background-color: #f480ff;
+		}
+		</style>
+    </head>
+    <body>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+		<center>
+			<div>
+				<h1>Conversor de letras - caixa alta</h1>
+				<br>
+				<center>
+					<div id="CampoCaixaAlta">
+						<label>Texto Convertido:</label>
+						<h1><P>Campo de Conversão</p></h1>
+					</div>
+					<br>
+					<input type="text" name="texto" id="texto" value="Escreva algo para converter" onchange="Pega()" maxlength="50" style="width: 350px; height: 40px; font-size: 20px; text-align: center;"></input>
+				</center>
+			</div>
+		</center>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+		
+		<script>
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+			let campoTexto = document.getElementById("texto");
+			function Pega() {
+				let texto = campoTexto.value;
+				let result = texto.toUpperCase();
+				let p = document.getElementsByTagName("p");
+				p[0].innerHTML = result;
+			}	
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+        </script>	
+    </body>
+</html>

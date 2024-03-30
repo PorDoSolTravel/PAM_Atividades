@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aula PAM - Ativ4</title>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+		p{
+			font-family: "Nunito", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 300;
+			font-size: 20px;
+			font-style: normal;
+		}
+		h1, h2 {
+			font-family: "Josefin Sans", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 500;
+			font-style: normal;
+		}
+		div {
+			width: 90%;
+			height: 500px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 20px;
+			text-align: center;
+		}
+		#exemplos {
+			width: 200px;
+			height: 150px;
+			border: 1px solid black;
+			margin: 10px;
+			padding: 5px;
+			text-align: center;
+			background-color: #f480ff;
+		}
+		</style>
+    </head>
+    <body>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+		<center>
+			<div>
+				<h1>Onmouseover Event</h1>
+				<p>O evento <code>onmouseover</code> ocorre quando o ponteiro do mouse entra em um elemento. Esse evento é frequentemente usado junto com o <code>onmouseout</code>, que ocorre quando o ponteiro do mouse sai do elemento.</p>
+				<br>
+				<p>EXEMPLO:</p>
+				<center>
+					<div id="exemplos" onmouseover="OverFunction()">
+						<h2>Onmouseover</h2>
+						<h1 id="Ex1">0</h1>
+					</div>
+				</center>
+			</div>
+			
+			<div>
+				<h1>Onfocus Event</h1>
+				<p>O <code>onfocus</code> ocorre quando um elemento recebe foco. O evento <code>onfocus</code> é frequentemente usado em campos de entrada.</p>
+				<br>
+				<p>EXEMPLO:</p>
+				<center>
+					<div id="exemplos">		
+						<h2>Onfocus</h2>
+						<input type="text" onfocus="FocusFunction(this)">
+					</div>
+				</center>
+			</div>
+			
+			<div>
+				<h1>Onchange Event</h1>
+				<p>O evento <code>onchange</code> ocorre quando o valor de um elemento HTML é alterado.<br>Este evento é semelhante ao evento <code>oninput</code>. A diferença é que o evento <code>oninput</code> ocorre imediatamente após a alteração do valor de um elemento, enquanto <code>onchange</code> ocorre quando o elemento perde o foco, após a alteração do conteúdo. A outra diferença é que o evento <code>onchange</code> também funciona em elementos <code>select</code>.</p>
+				<br>
+				<p>EXEMPLO:</p>
+				<center>
+					<div id="exemplos">
+						<h2>Onchange</h2>
+						<input type="text" name="txt" value="Hello World" onchange="ChangeFunction(this.value)">
+					</div>
+				</center>
+			</div>
+		</center>
+		<!-- Créditos Código: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS -->
+		
+		<script>
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+			let y = 0
+			function OverFunction() {
+				document.getElementById("Ex1").innerHTML = y+=1;
+			}
+			
+			function FocusFunction(x) {
+				x.style.background = "#FFFF00";
+			}
+			function ChangeFunction(val) {
+				alert("O valor de entrada foi alterado. O novo valor é: " + val);
+			}
+			//Créditos: Natália Hidemi Sasaki e Geovana Terra Narcizo 3ºDS
+        </script>
+
+    </body>
+</html>
